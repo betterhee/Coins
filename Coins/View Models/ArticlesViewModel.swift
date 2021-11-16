@@ -7,11 +7,11 @@
 
 import Foundation
 
-class ArticlesViewModel {
+final class ArticlesViewModel {
 
     typealias ArticlesUpdatedAction = () -> Void
     
-    private let service: ArticleService
+    private let service: CoinApi
     private let articlesUpdatedAction: ArticlesUpdatedAction?
     
     private var articles: [Article] = [] {
@@ -20,7 +20,7 @@ class ArticlesViewModel {
         }
     }
     
-    init(service: ArticleService = ArticleService(),
+    init(service: CoinApi = CoinApi(),
          articlesUpdatedAction: @escaping ArticlesUpdatedAction) {
         self.articlesUpdatedAction = articlesUpdatedAction
         self.service = service

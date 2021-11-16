@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ArticleService {
+final class CoinApi {
     
     private let apiRequestLoader: APIRequestLoader
 
@@ -21,6 +21,18 @@ final class ArticleService {
             switch result {
             case .success(let value):
                 completion(.success(value.articles))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func coins(completion: @escaping (Result<[Coin], Error>) -> Void) {
+        let endpoint = CoinRequest.coins(limit: 10, toSymbol: nil)
+        apiRequestLoader.request(with: endpoint) { result in
+            switch result {
+            case .success(let value):
+                completion(.success(value.coins))
             case .failure(let error):
                 completion(.failure(error))
             }
