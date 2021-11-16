@@ -33,4 +33,8 @@ extension ArticleViewModel {
         return formatter.string(from: Date(timeIntervalSince1970: article.date))
     }
     
+    var thumbnailUrl: URL? {
+        URL(string: article.imageURL)
+    }
+    
 }
