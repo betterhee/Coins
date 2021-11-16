@@ -30,6 +30,8 @@ final class ArticlesViewController: UIViewController {
     
 }
 
+// MARK: - Table View
+
 extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
