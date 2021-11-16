@@ -74,6 +74,7 @@
                                         <connections>
                                             <outlet property="dateLabel" destination="WzO-e1-auW" id="0kC-Bp-Yi7"/>
                                             <outlet property="descriptionLabel" destination="gJo-nv-Kjz" id="OEQ-Cp-055"/>
+                                            <outlet property="thumbnailImageView" destination="fRj-eH-elC" id="WY8-n2-yIb"/>
                                             <outlet property="titleLabel" destination="W3G-Iz-U8H" id="Pyy-aU-nIC"/>
                                         </connections>
                                     </tableViewCell>
