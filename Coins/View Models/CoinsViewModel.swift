@@ -11,7 +11,7 @@ final class CoinsViewModel {
 
     typealias CoinsUpdatedAction = () -> Void
     
-    private let service: CoinApi
+    private let service: CoinServiceApi
     private let coinssUpdatedAction: CoinsUpdatedAction?
     
     private var coins: [Coin] = [] {
@@ -20,7 +20,7 @@ final class CoinsViewModel {
         }
     }
     
-    init(service: CoinApi = CoinApi(),
+    init(service: CoinServiceApi = CoinServiceApi(),
          coinssUpdatedAction: @escaping CoinsUpdatedAction) {
         self.coinssUpdatedAction = coinssUpdatedAction
         self.service = service
@@ -46,5 +46,9 @@ extension CoinsViewModel {
     func viewModelForCell(at index: Int) -> CoinViewModel {
         return CoinViewModel(coin: coins[index])
     }
-    
+
+    func viewModelForSelectedCell(at index: Int) -> HistoricalCoinViewModel {
+        return HistoricalCoinViewModel(coin: coins[index])
+    }
+
 }

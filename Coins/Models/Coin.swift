@@ -48,17 +48,17 @@ struct Coin: Decodable {
     }
     
 }
-
-enum Symbol: String, CaseIterable {
-    case BTC
-    case ETH
-    case DASH
-    case LTC
-    case ETC
-    case XRP
-    case BCH
-    case XMR
-    case QTUM
-    case ZEC
-    case BTG
-}
+//
+//enum Symbol: String, CaseIterable {
+//    case BTC
+//    case ETH
+//    case DASH
+//    case LTC
+//    case ETC
+//    case XRP
+//    case BCH
+//    case XMR
+//    case QTUM
+//    case ZEC
+//    case BTG
+//}

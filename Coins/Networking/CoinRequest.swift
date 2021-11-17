@@ -8,7 +8,7 @@
 import Foundation
 
 enum CoinRequest {
-    case coins(limit: Double, toSymbol: String?)
+    case coins(limit: Double, to: String?)
 }
 
 extension CoinRequest: RequestType {
@@ -33,10 +33,10 @@ extension CoinRequest: RequestType {
     
     var parameters: Parameters? {
         switch self {
-        case .coins(let limit, let toSymbol):
+        case .coins(let limit, let to):
             return [
                 "limit": String(limit),
-                "tsym": toSymbol ?? "USD"
+                "tsym": to ?? "USD"
             ]
         }
     }
