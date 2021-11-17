@@ -18,7 +18,6 @@ struct CoinResponse: Decodable {
 struct Coin: Decodable {
     let name: String
     let price: Double
-    let change24Hour: Double
     let changePercent24Hour: Double
     
 
@@ -33,7 +32,6 @@ struct Coin: Decodable {
     enum CodingKeys: String, CodingKey {
         case name = "FROMSYMBOL"
         case price = "PRICE"
-        case change24Hour = "CHANGE24HOUR"
         case changePercent24Hour = "CHANGEPCT24HOUR"
     }
     
@@ -43,7 +41,6 @@ struct Coin: Decodable {
         let coinContainer = try rawContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .usd)
         name = try coinContainer.decode(String.self, forKey: .name)
         price = try coinContainer.decode(Double.self, forKey: .price)
-        change24Hour = try coinContainer.decode(Double.self, forKey: .change24Hour)
         changePercent24Hour = try coinContainer.decode(Double.self, forKey: .changePercent24Hour)
     }
     

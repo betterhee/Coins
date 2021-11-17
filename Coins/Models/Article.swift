@@ -20,14 +20,12 @@ struct ArticleResponse: Decodable {
 struct Article: Decodable {
     
     let title: String
-    let description: String
     let url: String
     let date: TimeInterval
     let imageURL: String
 
     enum CodingKeys: String, CodingKey {
         case title
-        case description = "body"
         case url
         case date = "published_on"
         case imageURL = "imageurl"
