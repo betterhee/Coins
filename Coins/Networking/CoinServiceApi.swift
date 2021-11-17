@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CoinApi {
+final class CoinServiceApi {
     
     private let apiRequestLoader: APIRequestLoader
 
@@ -28,7 +28,7 @@ final class CoinApi {
     }
     
     func coins(completion: @escaping (Result<[Coin], Error>) -> Void) {
-        let endpoint = CoinRequest.coins(limit: 10, toSymbol: nil)
+        let endpoint = CoinRequest.coins(limit: 10, to: nil)
         apiRequestLoader.request(with: endpoint) { result in
             switch result {
             case .success(let value):
@@ -38,5 +38,17 @@ final class CoinApi {
             }
         }
     }
-    
+
+    func historicalCoins(from: Coin, period: Period, completion: @escaping (Result<[HistoricalCoin], Error>) -> Void) {
+        let endpoint = HistoricalCoinRequest.historicalCoin(from: from, to: nil, period: period)
+        apiRequestLoader.request(with: endpoint) { result in
+            switch result {
+            case .success(let value):
+                completion(.success(value.historicalCoins))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
 }

@@ -11,7 +11,7 @@ final class ArticlesViewModel {
 
     typealias ArticlesUpdatedAction = () -> Void
     
-    private let service: CoinApi
+    private let service: CoinServiceApi
     private let articlesUpdatedAction: ArticlesUpdatedAction?
     
     private var articles: [Article] = [] {
@@ -20,7 +20,7 @@ final class ArticlesViewModel {
         }
     }
     
-    init(service: CoinApi = CoinApi(),
+    init(service: CoinServiceApi = CoinServiceApi(),
          articlesUpdatedAction: @escaping ArticlesUpdatedAction) {
         self.articlesUpdatedAction = articlesUpdatedAction
         self.service = service

@@ -9,10 +9,14 @@ import UIKit
 
 final class CoinsViewController: UIViewController {
 
+    private enum SegueIdentifier: String {
+        case toHistoricalCoin
+    }
+
     // MARK: - Properties
     
     private var viewModel: CoinsViewModel!
-    
+
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - View Life Cycle
@@ -26,21 +30,21 @@ final class CoinsViewController: UIViewController {
             }
         })
     }
-    
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == SegueIdentifier.toHistoricalCoin.rawValue,
+           let destination = segue.destination as? HistoricalCoinViewController,
+           let viewModel = sender as? HistoricalCoinViewModel {
+            destination.viewModel = viewModel
+        }
     }
-    */
 
 }
 
 extension CoinsViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows
     }
@@ -53,6 +57,11 @@ extension CoinsViewController: UITableViewDataSource, UITableViewDelegate {
         let viewModel = viewModel.viewModelForCell(at: indexPath.row)
         cell.configure(with: viewModel)
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewModel = viewModel.viewModelForSelectedCell(at: indexPath.row)
+        performSegue(withIdentifier: SegueIdentifier.toHistoricalCoin.rawValue, sender: viewModel)
     }
     
 }
