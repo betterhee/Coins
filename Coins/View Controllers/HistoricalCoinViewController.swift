@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 final class HistoricalCoinViewController: UIViewController {
 
@@ -15,6 +16,8 @@ final class HistoricalCoinViewController: UIViewController {
 
     @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var chartView: LineChartView!
+    @IBOutlet weak var periodSegmentedControl: UISegmentedControl!
 
     // MARK: - View Life Cycle
 
@@ -27,7 +30,7 @@ final class HistoricalCoinViewController: UIViewController {
 
     private func setupViewModel() {
         viewModel.didReceiveHistoricalCoin = { historicalCoins in
-            
+
         }
         viewModel.fetchHistoricalCoin()
     }
@@ -44,7 +47,6 @@ final class HistoricalCoinViewController: UIViewController {
         coinLabel.text = viewModel.title
     }
 
-    @IBOutlet weak var periodSegmentedControl: UISegmentedControl!
 
     @IBAction func periodSegmentedControlDidTap(_ sender: UISegmentedControl) {
         let period: Period = Period(rawValue: sender.selectedSegmentIndex) ?? .day

@@ -230,7 +230,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fW-w2x">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fW-w2x" customClass="LineChartView" customModule="Charts">
                                         <rect key="frame" x="0.0" y="64.5" width="414" height="351"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -259,6 +259,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ggc-pi-UIl"/>
                     <connections>
+                        <outlet property="chartView" destination="ghV-fW-w2x" id="g51-RC-1hx"/>
                         <outlet property="coinLabel" destination="iem-I2-Cbe" id="QUG-yf-KHe"/>
                         <outlet property="periodSegmentedControl" destination="Io6-j6-74X" id="9ON-OE-AtG"/>
                         <outlet property="priceLabel" destination="4Wd-vm-4Vu" id="UZG-dG-U3c"/>
