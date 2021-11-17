@@ -23,10 +23,6 @@ extension ArticleViewModel {
         article.title
     }
     
-    var description: String {
-        article.description
-    }
-    
     var date: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

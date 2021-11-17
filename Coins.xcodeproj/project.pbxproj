@@ -31,6 +31,12 @@
 		5DD4667E27450C8700D1B730 /* HistoricalCoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD4667D27450C8700D1B730 /* HistoricalCoinRequest.swift */; };
 		5DD466822745338800D1B730 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466812745338800D1B730 /* Period.swift */; };
 		5DD466852745BF6F00D1B730 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5DD466842745BF6F00D1B730 /* Charts */; };
+		5DD466992745C75800D1B730 /* GraphikRegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD4668F2745C73D00D1B730 /* GraphikRegularItalic.otf */; };
+		5DD4669A2745C75800D1B730 /* GraphikSemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD4668A2745C73D00D1B730 /* GraphikSemiboldItalic.otf */; };
+		5DD4669F2745C75800D1B730 /* GraphikSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD4668C2745C73D00D1B730 /* GraphikSemibold.otf */; };
+		5DD466AA2745C75800D1B730 /* GraphikRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466902745C73E00D1B730 /* GraphikRegular.otf */; };
+		5DD466AD2745C91F00D1B730 /* GraphikMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466AB2745C91F00D1B730 /* GraphikMediumItalic.otf */; };
+		5DD466AE2745C91F00D1B730 /* GraphikMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466AC2745C91F00D1B730 /* GraphikMedium.otf */; };
 		5DF277012743841F003C434B /* CoinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF277002743841F003C434B /* CoinsViewModel.swift */; };
 		5DF27703274384CF003C434B /* CoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF27702274384CF003C434B /* CoinViewModel.swift */; };
 		5DF27707274385D0003C434B /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF27706274385D0003C434B /* CoinCell.swift */; };
@@ -63,6 +69,12 @@
 		5DD4667B274509F400D1B730 /* HistoricalCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalCoin.swift; sourceTree = "<group>"; };
 		5DD4667D27450C8700D1B730 /* HistoricalCoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalCoinRequest.swift; sourceTree = "<group>"; };
 		5DD466812745338800D1B730 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		5DD4668A2745C73D00D1B730 /* GraphikSemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikSemiboldItalic.otf; sourceTree = "<group>"; };
+		5DD4668C2745C73D00D1B730 /* GraphikSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikSemibold.otf; sourceTree = "<group>"; };
+		5DD4668F2745C73D00D1B730 /* GraphikRegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikRegularItalic.otf; sourceTree = "<group>"; };
+		5DD466902745C73E00D1B730 /* GraphikRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikRegular.otf; sourceTree = "<group>"; };
+		5DD466AB2745C91F00D1B730 /* GraphikMediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikMediumItalic.otf; sourceTree = "<group>"; };
+		5DD466AC2745C91F00D1B730 /* GraphikMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikMedium.otf; sourceTree = "<group>"; };
 		5DF277002743841F003C434B /* CoinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewModel.swift; sourceTree = "<group>"; };
 		5DF27702274384CF003C434B /* CoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewModel.swift; sourceTree = "<group>"; };
 		5DF27706274385D0003C434B /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
@@ -197,6 +209,7 @@
 		5DBF02632742352B00FE6C1D /* Resoureces */ = {
 			isa = PBXGroup;
 			children = (
+				5DD466862745C72800D1B730 /* fonts */,
 				5DBF021A2741FA9E00FE6C1D /* Assets.xcassets */,
 			);
 			path = Resoureces;
@@ -209,6 +222,19 @@
 				5DBF02132741FA9B00FE6C1D /* SceneDelegate.swift */,
 			);
 			path = Applcation;
+			sourceTree = "<group>";
+		};
+		5DD466862745C72800D1B730 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5DD466AC2745C91F00D1B730 /* GraphikMedium.otf */,
+				5DD466AB2745C91F00D1B730 /* GraphikMediumItalic.otf */,
+				5DD466902745C73E00D1B730 /* GraphikRegular.otf */,
+				5DD4668F2745C73D00D1B730 /* GraphikRegularItalic.otf */,
+				5DD4668C2745C73D00D1B730 /* GraphikSemibold.otf */,
+				5DD4668A2745C73D00D1B730 /* GraphikSemiboldItalic.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,8 +304,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DBF021E2741FA9E00FE6C1D /* LaunchScreen.storyboard in Resources */,
+				5DD466992745C75800D1B730 /* GraphikRegularItalic.otf in Resources */,
+				5DD466AE2745C91F00D1B730 /* GraphikMedium.otf in Resources */,
 				5DBF021B2741FA9E00FE6C1D /* Assets.xcassets in Resources */,
+				5DD466AD2745C91F00D1B730 /* GraphikMediumItalic.otf in Resources */,
 				5DBF02192741FA9B00FE6C1D /* Main.storyboard in Resources */,
+				5DD4669A2745C75800D1B730 /* GraphikSemiboldItalic.otf in Resources */,
+				5DD466AA2745C75800D1B730 /* GraphikRegular.otf in Resources */,
+				5DD4669F2745C75800D1B730 /* GraphikSemibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

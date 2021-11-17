@@ -30,13 +30,6 @@ extension CoinViewModel {
         return formatter.string(from: price)!
     }
     
-    var changePrice: String {
-        let price = coin.change24Hour as NSNumber
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter.string(from: price)!
-    }
-    
     var changePercent: String {
         let percent = coin.changePercent24Hour as NSNumber
         let formatter = NumberFormatter()
