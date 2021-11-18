@@ -8,7 +8,7 @@
 import Foundation
 
 enum CoinRequest {
-    case coins(limit: Double, to: String?)
+    case coins(limit: Int, to: String?)
 }
 
 extension CoinRequest: RequestType {

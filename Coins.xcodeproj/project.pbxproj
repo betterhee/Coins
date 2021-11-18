@@ -37,11 +37,23 @@
 		5DD466AD2745C91F00D1B730 /* GraphikMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466AB2745C91F00D1B730 /* GraphikMediumItalic.otf */; };
 		5DD466AE2745C91F00D1B730 /* GraphikMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466AC2745C91F00D1B730 /* GraphikMedium.otf */; };
 		5DD466B4274660A400D1B730 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5DD466B3274660A400D1B730 /* Charts */; };
+		5DD466BC27466C2D00D1B730 /* CoinRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466BB27466C2D00D1B730 /* CoinRequestTests.swift */; };
+		5DD466C32746708700D1B730 /* MockJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466C22746708700D1B730 /* MockJSON.swift */; };
 		5DF277012743841F003C434B /* CoinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF277002743841F003C434B /* CoinsViewModel.swift */; };
 		5DF27703274384CF003C434B /* CoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF27702274384CF003C434B /* CoinViewModel.swift */; };
 		5DF27707274385D0003C434B /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF27706274385D0003C434B /* CoinCell.swift */; };
 		5DF2770A27439402003C434B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5DF2770927439402003C434B /* Kingfisher */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DD466BD27466C2D00D1B730 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DBF02062741FA9B00FE6C1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DBF020D2741FA9B00FE6C1D;
+			remoteInfo = Coins;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5DBF020E2741FA9B00FE6C1D /* Coins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coins.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +87,9 @@
 		5DD466902745C73E00D1B730 /* GraphikRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikRegular.otf; sourceTree = "<group>"; };
 		5DD466AB2745C91F00D1B730 /* GraphikMediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikMediumItalic.otf; sourceTree = "<group>"; };
 		5DD466AC2745C91F00D1B730 /* GraphikMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikMedium.otf; sourceTree = "<group>"; };
+		5DD466B927466C2D00D1B730 /* CoinsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DD466BB27466C2D00D1B730 /* CoinRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRequestTests.swift; sourceTree = "<group>"; };
+		5DD466C22746708700D1B730 /* MockJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJSON.swift; sourceTree = "<group>"; };
 		5DF277002743841F003C434B /* CoinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewModel.swift; sourceTree = "<group>"; };
 		5DF27702274384CF003C434B /* CoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewModel.swift; sourceTree = "<group>"; };
 		5DF27706274385D0003C434B /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
@@ -90,6 +105,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5DD466B627466C2D00D1B730 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -97,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				5DBF02102741FA9B00FE6C1D /* Coins */,
+				5DD466BA27466C2D00D1B730 /* CoinsTests */,
 				5DBF020F2741FA9B00FE6C1D /* Products */,
 				5DD466B12746603200D1B730 /* Frameworks */,
 			);
@@ -106,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				5DBF020E2741FA9B00FE6C1D /* Coins.app */,
+				5DD466B927466C2D00D1B730 /* CoinsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,6 +269,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5DD466BA27466C2D00D1B730 /* CoinsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DD466BB27466C2D00D1B730 /* CoinRequestTests.swift */,
+				5DD466C22746708700D1B730 /* MockJSON.swift */,
+			);
+			path = CoinsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,6 +302,24 @@
 			productReference = 5DBF020E2741FA9B00FE6C1D /* Coins.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5DD466B827466C2D00D1B730 /* CoinsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DD466BF27466C2D00D1B730 /* Build configuration list for PBXNativeTarget "CoinsTests" */;
+			buildPhases = (
+				5DD466B527466C2D00D1B730 /* Sources */,
+				5DD466B627466C2D00D1B730 /* Frameworks */,
+				5DD466B727466C2D00D1B730 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DD466BE27466C2D00D1B730 /* PBXTargetDependency */,
+			);
+			name = CoinsTests;
+			productName = CoinsTests;
+			productReference = 5DD466B927466C2D00D1B730 /* CoinsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -276,11 +327,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					5DBF020D2741FA9B00FE6C1D = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					5DD466B827466C2D00D1B730 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 5DBF020D2741FA9B00FE6C1D;
 					};
 				};
 			};
@@ -302,6 +357,7 @@
 			projectRoot = "";
 			targets = (
 				5DBF020D2741FA9B00FE6C1D /* Coins */,
+				5DD466B827466C2D00D1B730 /* CoinsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -320,6 +376,13 @@
 				5DD4669A2745C75800D1B730 /* GraphikSemiboldItalic.otf in Resources */,
 				5DD466AA2745C75800D1B730 /* GraphikRegular.otf in Resources */,
 				5DD4669F2745C75800D1B730 /* GraphikSemibold.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DD466B727466C2D00D1B730 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +419,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5DD466B527466C2D00D1B730 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DD466BC27466C2D00D1B730 /* CoinRequestTests.swift in Sources */,
+				5DD466C32746708700D1B730 /* MockJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DD466BE27466C2D00D1B730 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DBF020D2741FA9B00FE6C1D /* Coins */;
+			targetProxy = 5DD466BD27466C2D00D1B730 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5DBF02172741FA9B00FE6C1D /* Main.storyboard */ = {
@@ -550,6 +630,52 @@
 			};
 			name = Release;
 		};
+		5DD466C027466C2D00D1B730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 325UV7FT5F;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterhee.CoinsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coins.app/Coins";
+			};
+			name = Debug;
+		};
+		5DD466C127466C2D00D1B730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 325UV7FT5F;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterhee.CoinsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coins.app/Coins";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -567,6 +693,15 @@
 			buildConfigurations = (
 				5DBF02232741FA9E00FE6C1D /* Debug */,
 				5DBF02242741FA9E00FE6C1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DD466BF27466C2D00D1B730 /* Build configuration list for PBXNativeTarget "CoinsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DD466C027466C2D00D1B730 /* Debug */,
+				5DD466C127466C2D00D1B730 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
