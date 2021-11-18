@@ -24,11 +24,7 @@ final class CoinsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel = CoinsViewModel(coinssUpdatedAction: {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        })
+        setupViewModel()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +33,17 @@ final class CoinsViewController: UIViewController {
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: selectedIndexPath, animated: false)
         }
+    }
+
+    // MARK: Setup
+
+    private func setupViewModel() {
+        viewModel = CoinsViewModel(didReceiveCoins: { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        })
     }
 
     // MARK: - Navigation

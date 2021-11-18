@@ -9,20 +9,18 @@ import Foundation
 
 final class CoinsViewModel {
 
-    typealias CoinsUpdatedAction = () -> Void
-    
     private let service: CoinServiceAPI
-    private let coinssUpdatedAction: CoinsUpdatedAction?
-    
+    private let didReceiveCoins: (() -> Void)?
+
     private var coins: [Coin] = [] {
         didSet {
-            coinssUpdatedAction?()
+            didReceiveCoins?()
         }
     }
     
     init(service: CoinServiceAPI = CoinServiceAPI(),
-         coinssUpdatedAction: @escaping CoinsUpdatedAction) {
-        self.coinssUpdatedAction = coinssUpdatedAction
+         didReceiveCoins: @escaping (() -> Void)) {
+        self.didReceiveCoins = didReceiveCoins
         self.service = service
         
         service.coins { result in
