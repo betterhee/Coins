@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum Period: Int {
+enum Duration: Int {
     case day
     case week
 }
 
-extension Period {
+extension Duration {
     var limit: Int {
         switch self {
         case .day:

@@ -8,7 +8,7 @@
 import Foundation
 
 enum HistoricalCoinRequest {
-    case historicalCoin(from: Coin, to: String?, period: Period)
+    case historicalCoin(from: Coin, to: String?, duration: Duration)
 }
 
 extension HistoricalCoinRequest: RequestType {
@@ -21,9 +21,9 @@ extension HistoricalCoinRequest: RequestType {
 
     var path: String {
         switch self {
-        case .historicalCoin(_, _, let period) where period == .day:
+        case .historicalCoin(_, _, let duration) where duration == .day:
             return "/data/v2/histohour"
-        case .historicalCoin(_, _, let period) where period == .week:
+        case .historicalCoin(_, _, let duration) where duration == .week:
             return "/data/v2/histoday"
         default:
             fatalError()
@@ -40,11 +40,11 @@ extension HistoricalCoinRequest: RequestType {
 
     var parameters: Parameters? {
         switch self {
-        case .historicalCoin(let from, let to, let period):
+        case .historicalCoin(let from, let to, let duration):
             return [
                 "fsym": from.name,
                 "tsym": to ?? "USD",
-                "limit": "\(period.limit)"
+                "limit": "\(duration.limit)"
             ]
         }
     }
