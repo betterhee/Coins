@@ -23,8 +23,8 @@ extension CoinViewModel {
         coin.name
     }
     
-    var price: String {
-        "USD \(coin.price)"
+    var price: String? {
+        CurrencyFormatter.string(from: coin.price)
     }
     
     var changePercent: String {

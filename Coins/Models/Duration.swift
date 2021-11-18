@@ -8,6 +8,7 @@
 import Foundation
 
 enum Duration: Int {
+    case hour
     case day
     case week
 }
@@ -15,6 +16,8 @@ enum Duration: Int {
 extension Duration {
     var limit: Int {
         switch self {
+        case .hour:
+            return 60 
         case .day:
             return 24
         case .week:

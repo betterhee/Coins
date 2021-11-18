@@ -21,6 +21,8 @@ extension HistoricalCoinRequest: RequestType {
 
     var path: String {
         switch self {
+        case .historicalCoin(_, _, let duration) where duration == .hour:
+            return "/data/v2/histominute"
         case .historicalCoin(_, _, let duration) where duration == .day:
             return "/data/v2/histohour"
         case .historicalCoin(_, _, let duration) where duration == .week:

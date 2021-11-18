@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CoinServiceApi {
+final class CoinServiceAPI {
     
     private let apiRequestLoader: APIRequestLoader
 
@@ -28,7 +28,7 @@ final class CoinServiceApi {
     }
     
     func coins(completion: @escaping (Result<[Coin], Error>) -> Void) {
-        let endpoint = CoinRequest.coins(limit: 10, to: nil)
+        let endpoint = CoinRequest.coins(limit: 20, to: nil)
         apiRequestLoader.request(with: endpoint) { result in
             switch result {
             case .success(let value):

@@ -137,7 +137,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qOC-Gt-G7c">
                                                             <rect key="frame" x="40" y="13" width="342" height="43"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRB-6z-q0i">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,234.56" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRB-6z-q0i">
                                                                     <rect key="frame" x="260.5" y="0.0" width="81.5" height="18"/>
                                                                     <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="18"/>
                                                                     <nil key="textColor"/>
@@ -207,33 +207,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="R8t-5y-VfS">
-                                <rect key="frame" x="16" y="156" width="382" height="641"/>
+                                <rect key="frame" x="16" y="104" width="382" height="693"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rw3-58-Ejj">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="58"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iem-I2-Cbe">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="14"/>
-                                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
+                                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="20"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wd-vm-4Vu">
-                                                <rect key="frame" x="0.0" y="22" width="382" height="26"/>
-                                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wd-vm-4Vu">
+                                                <rect key="frame" x="0.0" y="28" width="382" height="30"/>
+                                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fW-w2x" customClass="LineChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="56" width="382" height="546"/>
+                                        <rect key="frame" x="0.0" y="66" width="382" height="588"/>
                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                     </view>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-j6-74X">
-                                        <rect key="frame" x="0.0" y="610" width="382" height="32"/>
+                                        <rect key="frame" x="0.0" y="662" width="382" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
+                                            <segment title="1H"/>
                                             <segment title="1D"/>
                                             <segment title="1W"/>
                                         </segments>
@@ -253,7 +254,7 @@
                             <constraint firstItem="R8t-5y-VfS" firstAttribute="leading" secondItem="f1v-xF-ETq" secondAttribute="leading" constant="16" id="vin-8o-UB7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ggc-pi-UIl"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ggc-pi-UIl"/>
                     <connections>
                         <outlet property="chartView" destination="ghV-fW-w2x" id="g51-RC-1hx"/>
                         <outlet property="coinLabel" destination="iem-I2-Cbe" id="QUG-yf-KHe"/>

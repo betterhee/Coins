@@ -34,6 +34,7 @@ final class HistoricalCoinViewController: UIViewController {
     private func setupViewModel() {
         viewModel.didReceiveHistoricalCoin = { chartDatas, duration in
             let entries = chartDatas.map { ChartDataEntry(x: $0.0, y: $0.1)}
+            let lastestPrice = chartDatas.last?.price
             let dataSet = LineChartDataSet(entries: entries)
             dataSet.mode = .horizontalBezier
             dataSet.colors = [UIColor.systemBlue]
@@ -52,6 +53,7 @@ final class HistoricalCoinViewController: UIViewController {
             
             let data = LineChartData(dataSet: dataSet)
             self.chartView.data = data
+            self.chartView.highlightValue(x: lastestPrice!, dataSetIndex: 0)
         }
         viewModel.didSelectChartValue = { price in
             self.priceLabel.text = price
@@ -66,7 +68,7 @@ final class HistoricalCoinViewController: UIViewController {
     }
     
     private func setupDurationSegmentedControl() {
-        durationSegmentedControl.backgroundColor = .white
+        durationSegmentedControl.layer.backgroundColor = UIColor.clear.cgColor
         durationSegmentedControl.selectedSegmentTintColor = .systemBlue
         let normalTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
         durationSegmentedControl.setTitleTextAttributes(normalTitleTextAttributes, for:.normal)

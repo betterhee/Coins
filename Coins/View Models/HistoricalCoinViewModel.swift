@@ -10,13 +10,13 @@ import Foundation
 final class HistoricalCoinViewModel {
     
     var didReceiveHistoricalCoin: (([(time: TimeInterval, price: Double)], Int) -> Void)?
-    var didSelectChartValue: ((String) -> Void)?
+    var didSelectChartValue: ((String?) -> Void)?
     
     private let coin: Coin
-    private let service: CoinServiceApi
+    private let service: CoinServiceAPI
     
     init(coin: Coin,
-         service: CoinServiceApi = CoinServiceApi()) {
+         service: CoinServiceAPI = CoinServiceAPI()) {
         self.coin = coin
         self.service = service
     }
@@ -37,7 +37,7 @@ extension HistoricalCoinViewModel {
     }
     
     func selectChartValue(_ value: Double) {
-        didSelectChartValue?("USD \(value)")
+        didSelectChartValue?(CurrencyFormatter.string(from: value))
     }
     
     func fetchHistoricalCoin(duration: Duration) {
