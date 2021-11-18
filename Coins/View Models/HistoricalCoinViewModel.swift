@@ -8,46 +8,51 @@
 import Foundation
 
 final class HistoricalCoinViewModel {
-
-    var didReceiveHistoricalCoin: (([HistoricalCoin]) -> Void)?
-
-    private var coin: Coin
+    
+    var didReceiveHistoricalCoin: (([(time: TimeInterval, price: Double)], Int) -> Void)?
+    var didSelectChartValue: ((String) -> Void)?
+    
+    private let coin: Coin
     private let service: CoinServiceApi
-    private var historicalCoin: [HistoricalCoin] = [] {
-        didSet {
-            didReceiveHistoricalCoin?(self.historicalCoin)
-        }
-    }
-
+    
     init(coin: Coin,
          service: CoinServiceApi = CoinServiceApi()) {
         self.coin = coin
         self.service = service
     }
-
-    var selectedPeriod: Period = .day {
-        didSet {
-            fetchHistoricalCoin()
-        }
-    }
-
+    
 }
 
 extension HistoricalCoinViewModel {
-
-    func fetchHistoricalCoin() {
-        service.historicalCoins(from: coin, period: selectedPeriod) { result in
+    
+    var title: String {
+        coin.name
+    }
+    
+    func selectDuration(at index: Int)  {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let duration: Duration = Duration(rawValue: index) ?? .day
+            self.fetchHistoricalCoin(duration: duration)
+        }
+    }
+    
+    func selectChartValue(_ value: Double) {
+        didSelectChartValue?("USD \(value)")
+    }
+    
+    func fetchHistoricalCoin(duration: Duration) {
+        service.historicalCoins(from: coin, duration: duration) { result in
             switch result {
             case .success(let value):
-                self.historicalCoin = value
+                let duration = duration.rawValue
+                let chartData = value.map { ($0.time, $0.price) }
+                DispatchQueue.main.async {
+                    self.didReceiveHistoricalCoin?(chartData, duration)
+                }
             case .failure:
                 break
             }
         }
     }
-
-    var title: String {
-        coin.name
-    }
-
+    
 }

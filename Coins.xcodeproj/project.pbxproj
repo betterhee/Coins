@@ -29,7 +29,7 @@
 		5DD4667A2744797000D1B730 /* HistoricalCoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466792744797000D1B730 /* HistoricalCoinViewModel.swift */; };
 		5DD4667C274509F500D1B730 /* HistoricalCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD4667B274509F400D1B730 /* HistoricalCoin.swift */; };
 		5DD4667E27450C8700D1B730 /* HistoricalCoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD4667D27450C8700D1B730 /* HistoricalCoinRequest.swift */; };
-		5DD466822745338800D1B730 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466812745338800D1B730 /* Period.swift */; };
+		5DD466822745338800D1B730 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466812745338800D1B730 /* Duration.swift */; };
 		5DD466852745BF6F00D1B730 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5DD466842745BF6F00D1B730 /* Charts */; };
 		5DD466992745C75800D1B730 /* GraphikRegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD4668F2745C73D00D1B730 /* GraphikRegularItalic.otf */; };
 		5DD4669A2745C75800D1B730 /* GraphikSemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD4668A2745C73D00D1B730 /* GraphikSemiboldItalic.otf */; };
@@ -68,7 +68,7 @@
 		5DD466792744797000D1B730 /* HistoricalCoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalCoinViewModel.swift; sourceTree = "<group>"; };
 		5DD4667B274509F400D1B730 /* HistoricalCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalCoin.swift; sourceTree = "<group>"; };
 		5DD4667D27450C8700D1B730 /* HistoricalCoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalCoinRequest.swift; sourceTree = "<group>"; };
-		5DD466812745338800D1B730 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		5DD466812745338800D1B730 /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		5DD4668A2745C73D00D1B730 /* GraphikSemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikSemiboldItalic.otf; sourceTree = "<group>"; };
 		5DD4668C2745C73D00D1B730 /* GraphikSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikSemibold.otf; sourceTree = "<group>"; };
 		5DD4668F2745C73D00D1B730 /* GraphikRegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikRegularItalic.otf; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 			children = (
 				5DBF026A27423C1900FE6C1D /* Coin.swift */,
 				5DD4667B274509F400D1B730 /* HistoricalCoin.swift */,
-				5DD466812745338800D1B730 /* Period.swift */,
+				5DD466812745338800D1B730 /* Duration.swift */,
 				5DBF02282741FAD600FE6C1D /* Article.swift */,
 			);
 			path = Models;
@@ -331,7 +331,7 @@
 				5DBF02692742394500FE6C1D /* CoinRequest.swift in Sources */,
 				5DBF02162741FA9B00FE6C1D /* ArticlesViewController.swift in Sources */,
 				5DD4667A2744797000D1B730 /* HistoricalCoinViewModel.swift in Sources */,
-				5DD466822745338800D1B730 /* Period.swift in Sources */,
+				5DD466822745338800D1B730 /* Duration.swift in Sources */,
 				5DF277012743841F003C434B /* CoinsViewModel.swift in Sources */,
 				5DBF02122741FA9B00FE6C1D /* AppDelegate.swift in Sources */,
 				5DD4667C274509F500D1B730 /* HistoricalCoin.swift in Sources */,

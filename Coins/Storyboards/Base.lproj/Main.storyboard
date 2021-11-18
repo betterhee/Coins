@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oKt-f7-5rF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oKt-f7-5rF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -206,10 +206,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yNB-4O-w9n">
-                                <rect key="frame" x="16" y="225" width="382" height="446"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="R8t-5y-VfS">
+                                <rect key="frame" x="16" y="156" width="382" height="641"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rw3-58-Ejj">
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rw3-58-Ejj">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iem-I2-Cbe">
@@ -218,7 +218,7 @@
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wd-vm-4Vu">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wd-vm-4Vu">
                                                 <rect key="frame" x="0.0" y="22" width="382" height="26"/>
                                                 <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="26"/>
                                                 <nil key="textColor"/>
@@ -226,39 +226,45 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fW-w2x" customClass="LineChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="56" width="382" height="351"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fW-w2x" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="56" width="382" height="300"/>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="351" id="qQx-tB-akS"/>
+                                            <constraint firstAttribute="height" constant="300" id="HI9-2R-1Tc"/>
                                         </constraints>
                                     </view>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-j6-74X">
-                                        <rect key="frame" x="0.0" y="415" width="382" height="32"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-j6-74X">
+                                        <rect key="frame" x="0.0" y="364" width="382" height="32"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
                                             <segment title="1D"/>
                                             <segment title="1W"/>
                                         </segments>
                                         <connections>
-                                            <action selector="periodSegmentedControlDidTap:" destination="dcD-N1-n1g" eventType="valueChanged" id="Ai0-5Q-xSZ"/>
+                                            <action selector="durationSegmentedControlDidTap:" destination="dcD-N1-n1g" eventType="valueChanged" id="96O-7i-yD4"/>
                                         </connections>
                                     </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Aa-ss-KNz">
+                                        <rect key="frame" x="0.0" y="403" width="382" height="238"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f1v-xF-ETq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yNB-4O-w9n" firstAttribute="leading" secondItem="f1v-xF-ETq" secondAttribute="leading" constant="16" id="V5A-j4-L90"/>
-                            <constraint firstItem="yNB-4O-w9n" firstAttribute="centerX" secondItem="D5N-8O-MRf" secondAttribute="centerX" id="gcd-rb-0f5"/>
-                            <constraint firstItem="yNB-4O-w9n" firstAttribute="centerY" secondItem="D5N-8O-MRf" secondAttribute="centerY" id="iDj-Qg-fnD"/>
+                            <constraint firstItem="f1v-xF-ETq" firstAttribute="bottom" secondItem="R8t-5y-VfS" secondAttribute="bottom" constant="16" id="0uA-0k-lBH"/>
+                            <constraint firstItem="R8t-5y-VfS" firstAttribute="top" secondItem="f1v-xF-ETq" secondAttribute="top" constant="16" id="NcA-wq-6MI"/>
+                            <constraint firstItem="f1v-xF-ETq" firstAttribute="trailing" secondItem="R8t-5y-VfS" secondAttribute="trailing" constant="16" id="eMy-Gq-T4l"/>
+                            <constraint firstItem="R8t-5y-VfS" firstAttribute="leading" secondItem="f1v-xF-ETq" secondAttribute="leading" constant="16" id="vin-8o-UB7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ggc-pi-UIl"/>
                     <connections>
                         <outlet property="chartView" destination="ghV-fW-w2x" id="g51-RC-1hx"/>
                         <outlet property="coinLabel" destination="iem-I2-Cbe" id="QUG-yf-KHe"/>
-                        <outlet property="periodSegmentedControl" destination="Io6-j6-74X" id="9ON-OE-AtG"/>
+                        <outlet property="durationSegmentedControl" destination="Io6-j6-74X" id="9ON-OE-AtG"/>
                         <outlet property="priceLabel" destination="4Wd-vm-4Vu" id="UZG-dG-U3c"/>
                     </connections>
                 </viewController>
@@ -334,6 +340,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

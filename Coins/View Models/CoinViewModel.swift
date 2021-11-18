@@ -24,10 +24,7 @@ extension CoinViewModel {
     }
     
     var price: String {
-        let price = coin.price as NSNumber
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter.string(from: price)!
+        "USD \(coin.price)"
     }
     
     var changePercent: String {

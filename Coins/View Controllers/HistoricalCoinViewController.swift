@@ -9,48 +9,111 @@ import UIKit
 import Charts
 
 final class HistoricalCoinViewController: UIViewController {
-
+    
     // MARK: - Properties
-
+    
     var viewModel: HistoricalCoinViewModel!
-
+    
     @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var chartView: LineChartView!
-    @IBOutlet weak var periodSegmentedControl: UISegmentedControl!
-
+    @IBOutlet weak var durationSegmentedControl: UISegmentedControl!
+    
     // MARK: - View Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupViewModel()
         setupView()
     }
-
+    
+    // MARK: Setup
+    
     private func setupViewModel() {
-        viewModel.didReceiveHistoricalCoin = { historicalCoins in
-
+        viewModel.didReceiveHistoricalCoin = { chartDatas, duration in
+            let entries = chartDatas.map { ChartDataEntry(x: $0.0, y: $0.1)}
+            let dataSet = LineChartDataSet(entries: entries)
+            dataSet.mode = .horizontalBezier
+            dataSet.colors = [UIColor.systemBlue]
+            dataSet.drawCirclesEnabled = false
+            dataSet.drawCircleHoleEnabled = false
+            dataSet.drawValuesEnabled = false
+            dataSet.drawHorizontalHighlightIndicatorEnabled = false
+            
+            let startColor = UIColor.systemBlue
+            let endColor = UIColor(white: 1, alpha: 0.3)
+            let gradientColor = [startColor.cgColor, endColor.cgColor] as CFArray
+            let colorLocations: [CGFloat] = [1.0, 0.0]
+            let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColor, locations: colorLocations)
+            dataSet.fill = RadialGradientFill(gradient: gradient!)
+            dataSet.drawFilledEnabled = true
+            
+            let data = LineChartData(dataSet: dataSet)
+            self.chartView.data = data
         }
-        viewModel.fetchHistoricalCoin()
+        viewModel.didSelectChartValue = { price in
+            self.priceLabel.text = price
+        }
     }
-
-
+    
+    
     private func setupView() {
-        periodSegmentedControl.backgroundColor = .clear
-        periodSegmentedControl.selectedSegmentTintColor = .systemBlue
-        let normalTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
-        periodSegmentedControl.setTitleTextAttributes(normalTitleTextAttributes, for:.normal)
-        let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        periodSegmentedControl.setTitleTextAttributes(selectedTitleTextAttributes, for:.selected)
-
         coinLabel.text = viewModel.title
+        setupChartView()
+        setupDurationSegmentedControl()
     }
-
-
-    @IBAction func periodSegmentedControlDidTap(_ sender: UISegmentedControl) {
-        let period: Period = Period(rawValue: sender.selectedSegmentIndex) ?? .day
-        viewModel.selectedPeriod = period
+    
+    private func setupDurationSegmentedControl() {
+        durationSegmentedControl.backgroundColor = .white
+        durationSegmentedControl.selectedSegmentTintColor = .systemBlue
+        let normalTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        durationSegmentedControl.setTitleTextAttributes(normalTitleTextAttributes, for:.normal)
+        let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        durationSegmentedControl.setTitleTextAttributes(selectedTitleTextAttributes, for:.selected)
+        durationSegmentedControl.sendActions(for: .valueChanged)
     }
+    
+    private func setupChartView() {
+        let xAxis = chartView.xAxis
+        xAxis.drawGridLinesEnabled = false
+        xAxis.drawAxisLineEnabled = true
+        xAxis.drawLabelsEnabled = true
+        xAxis.labelPosition = .bottom
+        
+        let leftYAxis = chartView.leftAxis
+        leftYAxis.drawGridLinesEnabled = false
+        leftYAxis.drawAxisLineEnabled = false
+        leftYAxis.drawLabelsEnabled = false
+        
+        let rightYAxis = chartView.rightAxis
+        rightYAxis.drawGridLinesEnabled = false
+        rightYAxis.drawAxisLineEnabled = false
+        rightYAxis.drawLabelsEnabled = false
+        
+        chartView.doubleTapToZoomEnabled = false
+        chartView.legend.enabled = false
+        chartView.delegate = self
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func durationSegmentedControlDidTap(_ sender: UISegmentedControl) {
+        viewModel.selectDuration(at: sender.selectedSegmentIndex)
+    }
+    
+}
 
+// MARK: - ChartViewDelegate
+
+extension HistoricalCoinViewController: ChartViewDelegate {
+    
+    public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        viewModel.selectChartValue(entry.y)
+    }
+    
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        print(#function)
+    }
+    
 }

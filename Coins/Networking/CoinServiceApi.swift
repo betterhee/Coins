@@ -39,8 +39,8 @@ final class CoinServiceApi {
         }
     }
 
-    func historicalCoins(from: Coin, period: Period, completion: @escaping (Result<[HistoricalCoin], Error>) -> Void) {
-        let endpoint = HistoricalCoinRequest.historicalCoin(from: from, to: nil, period: period)
+    func historicalCoins(from: Coin, duration: Duration, completion: @escaping (Result<[HistoricalCoin], Error>) -> Void) {
+        let endpoint = HistoricalCoinRequest.historicalCoin(from: from, to: nil, duration: duration)
         apiRequestLoader.request(with: endpoint) { result in
             switch result {
             case .success(let value):
