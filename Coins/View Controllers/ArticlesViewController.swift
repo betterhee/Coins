@@ -21,7 +21,14 @@ final class ArticlesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = ArticlesViewModel(articlesUpdatedAction: {
+        setupViewModel()
+    }
+
+    // MARK: Setup
+
+    private func setupViewModel() {
+        viewModel = ArticlesViewModel(didReceiveArticles: { [weak self] in
+            guard let self = self else { return }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

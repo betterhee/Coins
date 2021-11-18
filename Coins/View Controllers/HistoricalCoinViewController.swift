@@ -32,7 +32,8 @@ final class HistoricalCoinViewController: UIViewController {
     // MARK: Setup
     
     private func setupViewModel() {
-        viewModel.didReceiveHistoricalCoin = { chartDatas, duration in
+        viewModel.didReceiveHistoricalCoin = { [weak self] chartDatas, duration in
+            guard let self = self else { return }
             let entries = chartDatas.map { ChartDataEntry(x: $0.0, y: $0.1)}
             let lastestPrice = chartDatas.last?.price
             let dataSet = LineChartDataSet(entries: entries)
@@ -55,7 +56,8 @@ final class HistoricalCoinViewController: UIViewController {
             self.chartView.data = data
             self.chartView.highlightValue(x: lastestPrice!, dataSetIndex: 0)
         }
-        viewModel.didSelectChartValue = { price in
+        viewModel.didSelectChartValue = { [weak self] price in
+            guard let self = self else { return }
             self.priceLabel.text = price
         }
     }
@@ -65,16 +67,6 @@ final class HistoricalCoinViewController: UIViewController {
         coinLabel.text = viewModel.title
         setupChartView()
         setupDurationSegmentedControl()
-    }
-    
-    private func setupDurationSegmentedControl() {
-        durationSegmentedControl.layer.backgroundColor = UIColor.clear.cgColor
-        durationSegmentedControl.selectedSegmentTintColor = .systemBlue
-        let normalTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
-        durationSegmentedControl.setTitleTextAttributes(normalTitleTextAttributes, for:.normal)
-        let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        durationSegmentedControl.setTitleTextAttributes(selectedTitleTextAttributes, for:.selected)
-        durationSegmentedControl.sendActions(for: .valueChanged)
     }
     
     private func setupChartView() {
@@ -97,6 +89,16 @@ final class HistoricalCoinViewController: UIViewController {
         chartView.doubleTapToZoomEnabled = false
         chartView.legend.enabled = false
         chartView.delegate = self
+    }
+
+    private func setupDurationSegmentedControl() {
+        durationSegmentedControl.layer.backgroundColor = UIColor.clear.cgColor
+        durationSegmentedControl.selectedSegmentTintColor = .systemBlue
+        let normalTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        durationSegmentedControl.setTitleTextAttributes(normalTitleTextAttributes, for:.normal)
+        let selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        durationSegmentedControl.setTitleTextAttributes(selectedTitleTextAttributes, for:.selected)
+        durationSegmentedControl.sendActions(for: .valueChanged)
     }
     
     // MARK: - Actions
