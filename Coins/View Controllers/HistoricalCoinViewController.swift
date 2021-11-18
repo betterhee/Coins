@@ -7,6 +7,7 @@
 
 import UIKit
 import Charts
+import SwiftUI
 
 final class HistoricalCoinViewController: UIViewController {
     
@@ -46,7 +47,7 @@ final class HistoricalCoinViewController: UIViewController {
             let gradientColor = [startColor.cgColor, endColor.cgColor] as CFArray
             let colorLocations: [CGFloat] = [1.0, 0.0]
             let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColor, locations: colorLocations)
-            dataSet.fill = RadialGradientFill(gradient: gradient!)
+            dataSet.fill = Fill.fillWithRadialGradient(gradient!)
             dataSet.drawFilledEnabled = true
             
             let data = LineChartData(dataSet: dataSet)
@@ -110,10 +111,6 @@ extension HistoricalCoinViewController: ChartViewDelegate {
     
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         viewModel.selectChartValue(entry.y)
-    }
-    
-    func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        print(#function)
     }
     
 }
