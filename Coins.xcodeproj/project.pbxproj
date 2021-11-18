@@ -30,13 +30,13 @@
 		5DD4667C274509F500D1B730 /* HistoricalCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD4667B274509F400D1B730 /* HistoricalCoin.swift */; };
 		5DD4667E27450C8700D1B730 /* HistoricalCoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD4667D27450C8700D1B730 /* HistoricalCoinRequest.swift */; };
 		5DD466822745338800D1B730 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466812745338800D1B730 /* Duration.swift */; };
-		5DD466852745BF6F00D1B730 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5DD466842745BF6F00D1B730 /* Charts */; };
 		5DD466992745C75800D1B730 /* GraphikRegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD4668F2745C73D00D1B730 /* GraphikRegularItalic.otf */; };
 		5DD4669A2745C75800D1B730 /* GraphikSemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD4668A2745C73D00D1B730 /* GraphikSemiboldItalic.otf */; };
 		5DD4669F2745C75800D1B730 /* GraphikSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD4668C2745C73D00D1B730 /* GraphikSemibold.otf */; };
 		5DD466AA2745C75800D1B730 /* GraphikRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466902745C73E00D1B730 /* GraphikRegular.otf */; };
 		5DD466AD2745C91F00D1B730 /* GraphikMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466AB2745C91F00D1B730 /* GraphikMediumItalic.otf */; };
 		5DD466AE2745C91F00D1B730 /* GraphikMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466AC2745C91F00D1B730 /* GraphikMedium.otf */; };
+		5DD466B4274660A400D1B730 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5DD466B3274660A400D1B730 /* Charts */; };
 		5DF277012743841F003C434B /* CoinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF277002743841F003C434B /* CoinsViewModel.swift */; };
 		5DF27703274384CF003C434B /* CoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF27702274384CF003C434B /* CoinViewModel.swift */; };
 		5DF27707274385D0003C434B /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF27706274385D0003C434B /* CoinCell.swift */; };
@@ -86,7 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DF2770A27439402003C434B /* Kingfisher in Frameworks */,
-				5DD466852745BF6F00D1B730 /* Charts in Frameworks */,
+				5DD466B4274660A400D1B730 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +98,7 @@
 			children = (
 				5DBF02102741FA9B00FE6C1D /* Coins */,
 				5DBF020F2741FA9B00FE6C1D /* Products */,
+				5DD466B12746603200D1B730 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,6 +238,13 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		5DD466B12746603200D1B730 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,7 +263,7 @@
 			name = Coins;
 			packageProductDependencies = (
 				5DF2770927439402003C434B /* Kingfisher */,
-				5DD466842745BF6F00D1B730 /* Charts */,
+				5DD466B3274660A400D1B730 /* Charts */,
 			);
 			productName = Coins;
 			productReference = 5DBF020E2741FA9B00FE6C1D /* Coins.app */;
@@ -287,7 +295,7 @@
 			mainGroup = 5DBF02052741FA9B00FE6C1D;
 			packageReferences = (
 				5DF2770827439402003C434B /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				5DD466832745BF6F00D1B730 /* XCRemoteSwiftPackageReference "Charts" */,
+				5DD466B2274660A400D1B730 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 5DBF020F2741FA9B00FE6C1D /* Products */;
 			projectDirPath = "";
@@ -566,12 +574,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5DD466832745BF6F00D1B730 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		5DD466B2274660A400D1B730 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				kind = exactVersion;
+				version = 3.6.0;
 			};
 		};
 		5DF2770827439402003C434B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
@@ -585,9 +593,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5DD466842745BF6F00D1B730 /* Charts */ = {
+		5DD466B3274660A400D1B730 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5DD466832745BF6F00D1B730 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 5DD466B2274660A400D1B730 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
 		5DF2770927439402003C434B /* Kingfisher */ = {

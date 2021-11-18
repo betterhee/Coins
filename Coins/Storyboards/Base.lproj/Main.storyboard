@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oKt-f7-5rF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oKt-f7-5rF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -209,7 +209,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="R8t-5y-VfS">
                                 <rect key="frame" x="16" y="156" width="382" height="641"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rw3-58-Ejj">
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rw3-58-Ejj">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iem-I2-Cbe">
@@ -226,15 +226,12 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fW-w2x" customClass="LineChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="56" width="382" height="300"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fW-w2x" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="56" width="382" height="546"/>
                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="HI9-2R-1Tc"/>
-                                        </constraints>
                                     </view>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-j6-74X">
-                                        <rect key="frame" x="0.0" y="364" width="382" height="32"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-j6-74X">
+                                        <rect key="frame" x="0.0" y="610" width="382" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
                                             <segment title="1D"/>
@@ -244,10 +241,6 @@
                                             <action selector="durationSegmentedControlDidTap:" destination="dcD-N1-n1g" eventType="valueChanged" id="96O-7i-yD4"/>
                                         </connections>
                                     </segmentedControl>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Aa-ss-KNz">
-                                        <rect key="frame" x="0.0" y="403" width="382" height="238"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -279,7 +272,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SSo-Bn-mLk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="amf-hq-xXz" kind="relationship" relationship="viewControllers" id="2vg-uB-diQ"/>
@@ -290,11 +282,11 @@
             </objects>
             <point key="canvasLocation" x="-1667" y="-34"/>
         </scene>
-        <!--Article-->
+        <!--Articles-->
         <scene sceneID="7ca-Vw-lEC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WBL-5u-VTe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Article" image="newspaper.fill" catalog="system" id="yV2-3b-8Yd"/>
+                    <tabBarItem key="tabBarItem" title="Articles" image="newspaper.fill" catalog="system" id="yV2-3b-8Yd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="D3H-B2-HYp">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -309,17 +301,20 @@
             </objects>
             <point key="canvasLocation" x="-777" y="340"/>
         </scene>
-        <!--Chart-->
+        <!--Coins-->
         <scene sceneID="JQQ-Re-Vpg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="amf-hq-xXz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chart" image="chart.bar.xaxis" catalog="system" id="NQi-NG-6Ec"/>
+                    <tabBarItem key="tabBarItem" title="Coins" image="chart.bar.xaxis" catalog="system" id="NQi-NG-6Ec"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="JeE-Uh-tyV">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9jh-Mn-e6v">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Y6k-bb-dcc" kind="relationship" relationship="rootViewController" id="wet-Fi-ncJ"/>
                     </connections>
