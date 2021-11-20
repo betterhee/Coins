@@ -1,5 +1,5 @@
 //
-//  CoinsViewModel.swift
+//  CoinListViewModel.swift
 //  Coins
 //
 //  Created by 홍다희 on 2021/11/16.
