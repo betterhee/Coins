@@ -42,4 +42,5 @@ struct Coin: Decodable {
         price = try coinContainer.decode(Double.self, forKey: .price)
         changePercent24Hour = try coinContainer.decode(Double.self, forKey: .changePercent24Hour)
     }
+
 }
