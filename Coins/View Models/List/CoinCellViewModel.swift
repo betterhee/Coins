@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CoinViewModel {
+struct CoinCellViewModel {
     
     private var coin: Coin
     
@@ -17,7 +17,7 @@ struct CoinViewModel {
     
 }
 
-extension CoinViewModel {
+extension CoinCellViewModel {
     
     var name: String {
         coin.name

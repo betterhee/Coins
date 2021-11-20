@@ -15,18 +15,6 @@ final class CoinServiceAPI {
         self.apiRequestLoader = apiRequestLoader
     }
     
-    func articles(completion: @escaping (Result<[Article], Error>) -> Void) {
-        let endpoint = ArticleRequest.articles
-        apiRequestLoader.request(with: endpoint) { result in
-            switch result {
-            case .success(let value):
-                completion(.success(value.articles))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
     func coins(completion: @escaping (Result<[Coin], Error>) -> Void) {
         let endpoint = CoinRequest.coins(limit: 20, to: nil)
         apiRequestLoader.request(with: endpoint) { result in
@@ -45,6 +33,18 @@ final class CoinServiceAPI {
             switch result {
             case .success(let value):
                 completion(.success(value.historicalCoins))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
+    func articlesFor(_ coin: Coin, completion: @escaping (Result<[Article], Error>) -> Void) {
+        let endpoint = ArticleRequest.articles(category: coin.name)
+        apiRequestLoader.request(with: endpoint) { result in
+            switch result {
+            case .success(let value):
+                completion(.success(value.articles))
             case .failure(let error):
                 completion(.failure(error))
             }

@@ -6,20 +6,21 @@
 //
 
 import UIKit
+import SafariServices
 import Charts
-import SwiftUI
 
-final class HistoricalCoinViewController: UIViewController {
+final class CoinDetailViewController: UIViewController {
     
     // MARK: - Properties
     
-    var viewModel: HistoricalCoinViewModel!
+    var viewModel: CoinDetailViewModel!
     
     @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var chartView: LineChartView!
     @IBOutlet weak var durationSegmentedControl: UISegmentedControl!
-    
+    @IBOutlet weak var tableView: UITableView!
+
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -60,32 +61,39 @@ final class HistoricalCoinViewController: UIViewController {
             guard let self = self else { return }
             self.priceLabel.text = price
         }
+        viewModel.didReceiveArticles = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
-    
-    
+
+
     private func setupView() {
         coinLabel.text = viewModel.title
         setupChartView()
         setupDurationSegmentedControl()
+        setupTableView()
     }
-    
+
     private func setupChartView() {
         let xAxis = chartView.xAxis
         xAxis.drawGridLinesEnabled = false
         xAxis.drawAxisLineEnabled = true
         xAxis.drawLabelsEnabled = true
         xAxis.labelPosition = .bottom
-        
+
         let leftYAxis = chartView.leftAxis
         leftYAxis.drawGridLinesEnabled = false
         leftYAxis.drawAxisLineEnabled = false
         leftYAxis.drawLabelsEnabled = false
-        
+
         let rightYAxis = chartView.rightAxis
         rightYAxis.drawGridLinesEnabled = false
         rightYAxis.drawAxisLineEnabled = false
         rightYAxis.drawLabelsEnabled = false
-        
+
         chartView.doubleTapToZoomEnabled = false
         chartView.legend.enabled = false
         chartView.delegate = self
@@ -100,21 +108,52 @@ final class HistoricalCoinViewController: UIViewController {
         durationSegmentedControl.setTitleTextAttributes(selectedTitleTextAttributes, for:.selected)
         durationSegmentedControl.sendActions(for: .valueChanged)
     }
-    
+
+    private func setupTableView() {
+        viewModel.fetchArticles()
+    }
+
     // MARK: - Actions
-    
+
     @IBAction func durationSegmentedControlDidTap(_ sender: UISegmentedControl) {
         viewModel.selectDuration(at: sender.selectedSegmentIndex)
     }
-    
+
 }
 
 // MARK: - ChartViewDelegate
 
-extension HistoricalCoinViewController: ChartViewDelegate {
-    
+extension CoinDetailViewController: ChartViewDelegate {
+
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         viewModel.selectChartValue(entry.y)
     }
-    
+
+}
+
+// MARK: - UITableViewDataSource & UITableViewDelegate
+
+extension CoinDetailViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleCell.reuseIdentifier, for: indexPath) as? ArticleCell else {
+            fatalError()
+        }
+
+        let viewModel = viewModel.viewModelForCell(at: indexPath.row)
+        cell.configure(with: viewModel)
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let url = viewModel.url(at: indexPath.row)
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
+    }
+
 }

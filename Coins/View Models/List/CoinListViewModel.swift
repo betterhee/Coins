@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CoinsViewModel {
+final class CoinListViewModel {
 
     private let service: CoinServiceAPI
     private let didReceiveCoins: (() -> Void)?
@@ -35,18 +35,18 @@ final class CoinsViewModel {
     
 }
 
-extension CoinsViewModel {
+extension CoinListViewModel {
     
     var numberOfRows: Int {
         return coins.count
     }
     
-    func viewModelForCell(at index: Int) -> CoinViewModel {
-        return CoinViewModel(coin: coins[index])
+    func viewModelForCell(at index: Int) -> CoinCellViewModel {
+        return CoinCellViewModel(coin: coins[index])
     }
 
-    func viewModelForSelectedCell(at index: Int) -> HistoricalCoinViewModel {
-        return HistoricalCoinViewModel(coin: coins[index])
+    func viewModelForSelectedCell(at index: Int) -> CoinDetailViewModel {
+        return CoinDetailViewModel(coin: coins[index])
     }
 
 }
