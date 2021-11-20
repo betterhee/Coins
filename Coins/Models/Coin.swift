@@ -19,7 +19,6 @@ struct Coin: Decodable {
     let name: String
     let price: Double
     let changePercent24Hour: Double
-    
 
     enum RootKeys: String, CodingKey {
         case raw = "RAW"
@@ -43,19 +42,5 @@ struct Coin: Decodable {
         price = try coinContainer.decode(Double.self, forKey: .price)
         changePercent24Hour = try coinContainer.decode(Double.self, forKey: .changePercent24Hour)
     }
-    
+
 }
-//
-//enum Symbol: String, CaseIterable {
-//    case BTC
-//    case ETH
-//    case DASH
-//    case LTC
-//    case ETC
-//    case XRP
-//    case BCH
-//    case XMR
-//    case QTUM
-//    case ZEC
-//    case BTG
-//}

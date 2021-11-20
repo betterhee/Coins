@@ -36,7 +36,7 @@ final class CoinDetailViewController: UIViewController {
         viewModel.didReceiveHistoricalCoin = { [weak self] chartDatas, duration in
             guard let self = self else { return }
             let entries = chartDatas.map { ChartDataEntry(x: $0.0, y: $0.1)}
-            let lastestPrice = chartDatas.last?.price
+            let latest = chartDatas.last?.time
             let dataSet = LineChartDataSet(entries: entries)
             dataSet.mode = .horizontalBezier
             dataSet.colors = [UIColor.systemBlue]
@@ -55,7 +55,9 @@ final class CoinDetailViewController: UIViewController {
             
             let data = LineChartData(dataSet: dataSet)
             self.chartView.data = data
-            self.chartView.highlightValue(x: lastestPrice!, dataSetIndex: 0)
+            self.chartView.highlightValue(x: latest!, dataSetIndex: 0)
+            self.chartView.xAxis.valueFormatter = DateAxisValueFormatter(duration: duration)
+            self.chartView.highlightValue(x: latestPrice!, dataSetIndex: 0)
         }
         viewModel.didSelectChartValue = { [weak self] price in
             guard let self = self else { return }

@@ -1,5 +1,5 @@
 //
-//  CoinsViewModel.swift
+//  CoinListViewModel.swift
 //  Coins
 //
 //  Created by 홍다희 on 2021/11/16.
@@ -41,8 +41,8 @@ extension CoinListViewModel {
         return coins.count
     }
     
-    func viewModelForCell(at index: Int) -> CoinCellViewModel {
-        return CoinCellViewModel(coin: coins[index])
+    func viewModelForCell(at index: Int) -> CoinViewModel {
+        return CoinViewModel(coin: coins[index])
     }
 
     func viewModelForSelectedCell(at index: Int) -> CoinDetailViewModel {
