@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CoinCellViewModel {
+struct CoinViewModel {
     
     private var coin: Coin
     
@@ -17,7 +17,7 @@ struct CoinCellViewModel {
     
 }
 
-extension CoinCellViewModel {
+extension CoinViewModel {
     
     var name: String {
         coin.name
@@ -32,6 +32,10 @@ extension CoinCellViewModel {
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
         return formatter.string(from: percent)!
+    }
+
+    var changePercentTextColor: Color {
+        return coin.changePercent24Hour < 0 ? .negative : .postivie
     }
     
 }
