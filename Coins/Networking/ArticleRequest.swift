@@ -8,7 +8,7 @@
 import Foundation
 
 enum ArticleRequest {
-    case articles
+    case articles(category: String)
 }
 
 extension ArticleRequest: RequestType {
@@ -32,7 +32,12 @@ extension ArticleRequest: RequestType {
     }
     
     var parameters: Parameters? {
-        nil
+        switch self {
+        case .articles(let category):
+            return [
+                "categories": category
+            ]
+        }
     }
     
 }

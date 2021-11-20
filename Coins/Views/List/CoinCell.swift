@@ -13,7 +13,7 @@ final class CoinCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var changePercentLabel: UILabel!
     
-    func configure(with viewModel: CoinViewModel) {
+    func configure(with viewModel: CoinCellViewModel) {
         nameLabel.text = viewModel.name
         priceLabel.text = viewModel.price
         changePercentLabel.text = viewModel.changePercent

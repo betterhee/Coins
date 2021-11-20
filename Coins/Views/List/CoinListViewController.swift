@@ -1,5 +1,5 @@
 //
-//  CoinsViewController.swift
+//  CoinListViewController.swift
 //  Coins
 //
 //  Created by 홍다희 on 2021/11/15.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CoinsViewController: UIViewController {
+final class CoinListViewController: UIViewController {
 
     private enum SegueIdentifier: String {
         case toHistoricalCoin
@@ -15,7 +15,7 @@ final class CoinsViewController: UIViewController {
 
     // MARK: - Properties
     
-    private var viewModel: CoinsViewModel!
+    private var viewModel: CoinListViewModel!
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,7 +38,7 @@ final class CoinsViewController: UIViewController {
     // MARK: Setup
 
     private func setupViewModel() {
-        viewModel = CoinsViewModel(didReceiveCoins: { [weak self] in
+        viewModel = CoinListViewModel(didReceiveCoins: { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -50,15 +50,15 @@ final class CoinsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifier.toHistoricalCoin.rawValue,
-           let destination = segue.destination as? HistoricalCoinViewController,
-           let viewModel = sender as? HistoricalCoinViewModel {
+           let destination = segue.destination as? CoinDetailViewController,
+           let viewModel = sender as? CoinDetailViewModel {
             destination.viewModel = viewModel
         }
     }
 
 }
 
-extension CoinsViewController: UITableViewDataSource, UITableViewDelegate {
+extension CoinListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows
