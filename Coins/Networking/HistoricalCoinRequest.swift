@@ -8,7 +8,7 @@
 import Foundation
 
 enum HistoricalCoinRequest {
-    case historicalCoin(from: Coin, to: String?, duration: Duration)
+    case historicalCoin(from: String, to: String?, duration: Duration)
 }
 
 extension HistoricalCoinRequest: RequestType {
@@ -44,7 +44,7 @@ extension HistoricalCoinRequest: RequestType {
         switch self {
         case .historicalCoin(let from, let to, let duration):
             return [
-                "fsym": from.name,
+                "fsym": from,
                 "tsym": to ?? "USD",
                 "limit": "\(duration.limit)"
             ]

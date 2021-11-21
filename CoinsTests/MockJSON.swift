@@ -146,4 +146,141 @@ struct MockJSON {
     ]
     }
     """.data(using: .utf8)!
+
+    static let article = """
+    {
+        "Type": 100,
+        "Message": "News list successfully returned",
+        "Promoted": [],
+        "Data": [
+            {
+                "id": "27375434",
+                "guid": "https://cryptopotato.com/?p=153025",
+                "published_on": 1637487712,
+                "imageurl": "https://images.cryptocompare.com/news/default/cryptopotato.png",
+                "title": "Market Watch: BTC Eyes $60K, AVAX to Replace DOGE As Top 10?",
+                "url": "https://cryptopotato.com/market-watch-btc-eyes-60k-avax-to-replace-doge-as-top-10/",
+                "source": "cryptopotato",
+                "body": "While bitcoin and most larger-cap alts stand still, Avalanche has gone on a tear by registering yet another new all-time high.",
+                "tags": "ADABTC|ADAUSD|AVAXBTC|AVAXUSD|BNBBTC|BNBUSD|BTCEUR|BTCGBP|BTCUSD|BTCUSDT|Crypto News|DOGEBTC|DOGEUSD|DOTBTC|DOTUSD|DOTUSDT|ETHBTC|ETHUSD|featured1|Market Updates|SHIBBTC|SHIBUSD|social|SOLBTC|SOLUSD|XRPBTC|XRPUSD|Avalanche (AVAX) Price|Bitcoin (BTC) Price|Dogecoin",
+                "categories": "BTC|Market",
+                "upvotes": "0",
+                "downvotes": "0",
+                "lang": "EN",
+                "source_info": {
+                    "name": "Crypto Potato",
+                    "lang": "EN",
+                    "img": "https://images.cryptocompare.com/news/default/cryptopotato.png"
+                }
+            },
+        ],
+        "RateLimit": {},
+        "HasWarning": false
+    }
+    """.data(using: .utf8)!
+
+    static let historicalCoin = """
+    {
+    "Response": "Success",
+    "Message": "",
+    "HasWarning": false,
+    "Type": 100,
+    "RateLimit": {},
+    "Data": {
+        "Aggregated": false,
+        "TimeFrom": 1636848000,
+        "TimeTo": 1637452800,
+        "Data": [
+            {
+                "time": 1636848000,
+                "high": 65509.06,
+                "low": 63616.33,
+                "open": 64409.56,
+                "volumefrom": 14680.72,
+                "volumeto": 947303706.23,
+                "close": 65509.06,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1636934400,
+                "high": 66335.42,
+                "low": 63442.58,
+                "open": 65509.06,
+                "volumefrom": 25263.23,
+                "volumeto": 1639253320.63,
+                "close": 63614.06,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1637020800,
+                "high": 63614.53,
+                "low": 58745.71,
+                "open": 63614.06,
+                "volumefrom": 61509.16,
+                "volumeto": 3740808475.72,
+                "close": 60108.9,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1637107200,
+                "high": 60837.09,
+                "low": 58566.05,
+                "open": 60108.9,
+                "volumefrom": 43164.9,
+                "volumeto": 2582737930.61,
+                "close": 60365.6,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1637193600,
+                "high": 60964.37,
+                "low": 56535.61,
+                "open": 60365.6,
+                "volumefrom": 63523.43,
+                "volumeto": 3718546724.95,
+                "close": 56930.68,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1637280000,
+                "high": 58403.92,
+                "low": 55655.03,
+                "open": 56930.68,
+                "volumefrom": 36833.38,
+                "volumeto": 2107344590.7,
+                "close": 58136.22,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1637366400,
+                "high": 59901.9,
+                "low": 57450.63,
+                "open": 58136.22,
+                "volumefrom": 16773.71,
+                "volumeto": 985075173.7,
+                "close": 59769.66,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            },
+            {
+                "time": 1637452800,
+                "high": 59824.18,
+                "low": 58575.6,
+                "open": 59769.66,
+                "volumefrom": 5742.12,
+                "volumeto": 339198615.26,
+                "close": 58708.55,
+                "conversionType": "direct",
+                "conversionSymbol": ""
+            }
+        ]
+    }
+    }
+    """.data(using: .utf8)!
 }
