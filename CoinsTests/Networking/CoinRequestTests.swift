@@ -21,8 +21,8 @@ class CoinRequestTests: XCTestCase {
         XCTAssertEqual(urlRequest?.url?.scheme, "https")
         XCTAssertEqual(urlRequest?.url?.host, "min-api.cryptocompare.com")
         XCTAssertEqual(urlRequest?.url?.path, "/data/top/totalvolfull")
-        XCTAssertEqual(urlRequest?.url?.query, "limit=10&tsym=USD")
-
+        XCTAssertEqual(urlRequest?.url?.query?.contains("limit=10"), true)
+        XCTAssertEqual(urlRequest?.url?.query?.contains("tsym=USD"), true)
     }
 
     func testParsingResponse() throws {

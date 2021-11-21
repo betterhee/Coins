@@ -41,6 +41,7 @@
 		5DD466CC2749122B00D1B730 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466CB2749122B00D1B730 /* Color.swift */; };
 		5DD466CE274916FC00D1B730 /* DateAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466CD274916FC00D1B730 /* DateAxisValueFormatter.swift */; };
 		5DD466D1274A592500D1B730 /* ArticleRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466D0274A592400D1B730 /* ArticleRequestTests.swift */; };
+		5DD466D7274A6A8900D1B730 /* HistoricalCoinRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466D6274A6A8900D1B730 /* HistoricalCoinRequestTest.swift */; };
 		5DF277012743841F003C434B /* CoinListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF277002743841F003C434B /* CoinListViewModel.swift */; };
 		5DF27703274384CF003C434B /* CoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF27702274384CF003C434B /* CoinViewModel.swift */; };
 		5DF27707274385D0003C434B /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF27706274385D0003C434B /* CoinCell.swift */; };
@@ -94,6 +95,7 @@
 		5DD466CB2749122B00D1B730 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5DD466CD274916FC00D1B730 /* DateAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAxisValueFormatter.swift; sourceTree = "<group>"; };
 		5DD466D0274A592400D1B730 /* ArticleRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRequestTests.swift; sourceTree = "<group>"; };
+		5DD466D6274A6A8900D1B730 /* HistoricalCoinRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalCoinRequestTest.swift; sourceTree = "<group>"; };
 		5DF277002743841F003C434B /* CoinListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewModel.swift; sourceTree = "<group>"; };
 		5DF27702274384CF003C434B /* CoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewModel.swift; sourceTree = "<group>"; };
 		5DF27706274385D0003C434B /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
@@ -256,9 +258,7 @@
 		5DD466BA27466C2D00D1B730 /* CoinsTests */ = {
 			isa = PBXGroup;
 			children = (
-				5DD466BB27466C2D00D1B730 /* CoinRequestTests.swift */,
-				5DD466D0274A592400D1B730 /* ArticleRequestTests.swift */,
-				5DD466C22746708700D1B730 /* MockJSON.swift */,
+				5DD466D8274A6EBC00D1B730 /* Networking */,
 			);
 			path = CoinsTests;
 			sourceTree = "<group>";
@@ -306,6 +306,17 @@
 				5DBF025C2742268800FE6C1D /* ArticleCell.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		5DD466D8274A6EBC00D1B730 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5DD466BB27466C2D00D1B730 /* CoinRequestTests.swift */,
+				5DD466D0274A592400D1B730 /* ArticleRequestTests.swift */,
+				5DD466D6274A6A8900D1B730 /* HistoricalCoinRequestTest.swift */,
+				5DD466C22746708700D1B730 /* MockJSON.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +467,7 @@
 			files = (
 				5DD466BC27466C2D00D1B730 /* CoinRequestTests.swift in Sources */,
 				5DD466D1274A592500D1B730 /* ArticleRequestTests.swift in Sources */,
+				5DD466D7274A6A8900D1B730 /* HistoricalCoinRequestTest.swift in Sources */,
 				5DD466C32746708700D1B730 /* MockJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

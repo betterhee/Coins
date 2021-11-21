@@ -22,7 +22,6 @@ class ArticleRequestTests: XCTestCase {
         XCTAssertEqual(urlRequest?.url?.host, "min-api.cryptocompare.com")
         XCTAssertEqual(urlRequest?.url?.path, "/data/v2/news")
         XCTAssertEqual(urlRequest?.url?.query, "categories=BTC")
-
     }
 
     func testParsingResponse() throws {
